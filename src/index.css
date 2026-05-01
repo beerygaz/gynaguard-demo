@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    background-color: #1a1410;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    background-color: #1a1410;
+    color: #f0e8de;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+@layer utilities {
+  .text-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+
+  .glass {
+    background: rgba(35, 29, 24, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .card-glow {
+    box-shadow: 0 0 0 1px rgba(201, 82, 40, 0.15), 0 4px 24px rgba(0,0,0,0.4);
+  }
+
+  .gradient-rust {
+    background: linear-gradient(135deg, #c95228 0%, #a8401e 100%);
+  }
+
+  .gradient-warm {
+    background: linear-gradient(135deg, #e87040 0%, #c95228 50%, #883219 100%);
+  }
+
+  .gradient-sienna {
+    background: linear-gradient(135deg, #d6ae8b 0%, #c38760 100%);
+  }
+
+  .tab-active {
+    color: #e87040;
+  }
+
+  .tab-inactive {
+    color: #7a6a5a;
+  }
+
+  .input-field {
+    @apply w-full bg-warm-card border border-warm-border rounded-xl px-4 py-3 text-warm-text placeholder-warm-muted focus:outline-none focus:border-rust-500 transition-colors;
+  }
+
+  .btn-primary {
+    @apply gradient-rust text-white font-semibold rounded-2xl px-6 py-3.5 transition-all active:scale-95 shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-warm-card border border-warm-border text-warm-text font-medium rounded-2xl px-6 py-3.5 transition-all active:scale-95;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-all;
+  }
+
+  .chip-selected {
+    @apply bg-rust-500 text-white;
+  }
+
+  .chip-unselected {
+    @apply bg-warm-card border border-warm-border text-warm-muted;
+  }
+}
