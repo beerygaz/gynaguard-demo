@@ -15,7 +15,7 @@ const slides = [
   {
     icon: <Heart className="text-amber-400" size={48} />,
     title: 'Daily check-ins\nthat matter.',
-    subtitle: 'Log symptoms, flow, mood, and notes in seconds. Gyanguard learns your patterns over time.',
+    subtitle: 'Log symptoms, flow, mood, and notes in seconds. Gynaguard learns your patterns over time.',
     accent: 'from-sienna-900/60 to-warm-bg',
   },
   {
@@ -49,7 +49,7 @@ export default function OnboardingScreen({ onComplete }: Props) {
         <div className="w-12 h-12 gradient-rust rounded-2xl flex items-center justify-center shadow-lg">
           <span className="text-display text-white text-xl font-bold">G</span>
         </div>
-        <span className="text-warm-muted text-xs tracking-widest uppercase font-medium">Gyanguard</span>
+        <span className="text-warm-muted text-xs tracking-widest uppercase font-medium">Gynaguard</span>
       </div>
 
       {/* Slide content */}

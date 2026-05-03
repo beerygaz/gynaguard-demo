@@ -1,8 +1,8 @@
-# Gyanguard — Women's Health Cycle Tracker
+# Gynaguard — Women's Health Cycle Tracker
 
 > Static prototype · Mobile-first · No backend
 
-A polished React/TypeScript demo app for the Gyanguard women's health product — menstrual cycle tracking with privacy-first design, daily logging, pattern insights, and an optional shared support feature.
+A polished React/TypeScript demo app for the Gynaguard women's health product — menstrual cycle tracking with privacy-first design, daily logging, pattern insights, and an optional shared support feature.
 
 ---
 
@@ -40,10 +40,10 @@ npm run preview
 
 ```bash
 # Build image
-docker build -t gyanguard-demo .
+docker build -t gynaguard-demo .
 
 # Run on port 3000
-docker run -p 3000:80 gyanguard-demo
+docker run -p 3000:80 gynaguard-demo
 
 # Open http://localhost:3000
 ```

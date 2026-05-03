@@ -103,7 +103,7 @@ export default function ProfileScreen({ onNavigate }: Props) {
 
       {/* Version */}
       <p className="text-center text-warm-muted text-xs pb-2">
-        Gyanguard v0.1 · Private beta · gyna.apps.highpeak.co.za
+        Gynaguard v0.1 · Private beta · gyna.apps.highpeak.co.za
       </p>
     </div>
   )

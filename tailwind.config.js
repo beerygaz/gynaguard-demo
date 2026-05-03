@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Gyanguard warm autumn palette
+        // Gynaguard warm autumn palette
         rust: {
           50:  '#fdf4ef',
           100: '#fbe4d4',
