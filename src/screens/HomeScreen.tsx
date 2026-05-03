@@ -25,7 +25,7 @@ function PhaseArc({ day, total = 28 }: { day: number; total?: number }) {
       <circle
         cx={cx} cy={cy} r={r}
         fill="none"
-        stroke="#3d3028"
+        stroke="#cfb9bb"
         strokeWidth="8"
       />
       {/* Progress */}
@@ -40,15 +40,15 @@ function PhaseArc({ day, total = 28 }: { day: number; total?: number }) {
       />
       <defs>
         <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#e87040" />
-          <stop offset="100%" stopColor="#c95228" />
+          <stop offset="0%" stopColor="#e9608a" />
+          <stop offset="100%" stopColor="#de2e64" />
         </linearGradient>
       </defs>
       {/* Day label */}
-      <text x={cx} y={cy - 6} textAnchor="middle" fill="#f0e8de" fontSize="24" fontWeight="700" fontFamily="Inter, sans-serif">
+      <text x={cx} y={cy - 6} textAnchor="middle" fill="#374151" fontSize="24" fontWeight="700" fontFamily="Montserrat, sans-serif">
         {day}
       </text>
-      <text x={cx} y={cy + 12} textAnchor="middle" fill="#7a6a5a" fontSize="11" fontFamily="Inter, sans-serif">
+      <text x={cx} y={cy + 12} textAnchor="middle" fill="#7d7d7d" fontSize="11" fontFamily="Montserrat, sans-serif">
         cycle day
       </text>
     </svg>
@@ -56,10 +56,10 @@ function PhaseArc({ day, total = 28 }: { day: number; total?: number }) {
 }
 
 function CyclePhaseLabel({ day }: { day: number }) {
-  if (day <= 5) return <span className="text-rust-400">Menstrual</span>
-  if (day <= 13) return <span className="text-amber-400">Follicular</span>
-  if (day <= 15) return <span className="text-sage-400">Ovulation</span>
-  return <span className="text-sienna-400">Luteal</span>
+  if (day <= 5) return <span className="text-gg-pink">Menstrual</span>
+  if (day <= 13) return <span className="text-gg-teal">Follicular</span>
+  if (day <= 15) return <span className="text-gg-teal">Ovulation</span>
+  return <span className="text-gg-pink-mid">Luteal</span>
 }
 
 export default function HomeScreen({ onNavigate }: Props) {
@@ -76,22 +76,22 @@ export default function HomeScreen({ onNavigate }: Props) {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-warm-muted text-sm">{greeting}</p>
-          <h1 className="text-display text-2xl font-semibold text-warm-text">Amara</h1>
+          <p className="text-gg-grey text-sm">{greeting}</p>
+          <h1 className="text-display text-2xl font-semibold text-gray-800">Amara</h1>
         </div>
         <button
           onClick={() => onNavigate('profile')}
-          className="w-10 h-10 rounded-full gradient-rust flex items-center justify-center shadow-md"
+          className="w-10 h-10 rounded-full gradient-gg-pink flex items-center justify-center shadow-md"
         >
           <span className="text-white text-sm font-semibold">A</span>
         </button>
       </div>
 
       {/* Main cycle card */}
-      <div className="bg-warm-card border border-warm-border rounded-3xl p-5 card-glow">
+      <div className="bg-white border border-gg-blush rounded-3xl p-5 card-glow">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <p className="text-warm-muted text-xs uppercase tracking-wider font-medium mb-1">Current phase</p>
+            <p className="text-gg-grey text-xs uppercase tracking-wider font-medium mb-1">Current phase</p>
             <p className="text-lg font-semibold">
               <CyclePhaseLabel day={currentCycleDay} />
             </p>
@@ -100,17 +100,17 @@ export default function HomeScreen({ onNavigate }: Props) {
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <div className="bg-warm-bg rounded-2xl p-3">
-            <p className="text-warm-muted text-xs mb-1">Next period</p>
-            <p className="text-warm-text font-semibold text-sm">
+          <div className="bg-gg-pale-blush rounded-2xl p-3">
+            <p className="text-gg-grey text-xs mb-1">Next period</p>
+            <p className="text-gray-800 font-semibold text-sm">
               {new Date(nextPeriodDate).toLocaleDateString('en-ZA', { day: 'numeric', month: 'short' })}
             </p>
-            <p className="text-rust-400 text-xs mt-0.5">in {daysUntilNextPeriod} days</p>
+            <p className="text-gg-pink text-xs mt-0.5">in {daysUntilNextPeriod} days</p>
           </div>
-          <div className="bg-warm-bg rounded-2xl p-3">
-            <p className="text-warm-muted text-xs mb-1">Fertile window</p>
-            <p className="text-warm-text font-semibold text-sm">May 7 – 12</p>
-            <p className="text-sage-400 text-xs mt-0.5">in 6 days</p>
+          <div className="bg-gg-pale-blush rounded-2xl p-3">
+            <p className="text-gg-grey text-xs mb-1">Fertile window</p>
+            <p className="text-gray-800 font-semibold text-sm">May 7 – 12</p>
+            <p className="text-gg-teal text-xs mt-0.5">in 6 days</p>
           </div>
         </div>
       </div>
@@ -118,23 +118,23 @@ export default function HomeScreen({ onNavigate }: Props) {
       {/* Quick log CTA */}
       <button
         onClick={() => onNavigate('checkin')}
-        className="w-full bg-warm-card border border-rust-800/50 rounded-2xl p-4 flex items-center gap-3 active:scale-[0.98] transition-transform"
+        className="w-full bg-white border border-gg-blush rounded-2xl p-4 flex items-center gap-3 active:scale-[0.98] transition-transform"
       >
-        <div className="w-10 h-10 gradient-rust rounded-xl flex items-center justify-center flex-shrink-0">
+        <div className="w-10 h-10 gradient-gg-pink rounded-xl flex items-center justify-center flex-shrink-0">
           <Droplets size={18} className="text-white" />
         </div>
         <div className="flex-1 text-left">
-          <p className="text-warm-text font-medium text-sm">Log today</p>
-          <p className="text-warm-muted text-xs mt-0.5">How are you feeling today?</p>
+          <p className="text-gray-800 font-medium text-sm">Log today</p>
+          <p className="text-gg-grey text-xs mt-0.5">How are you feeling today?</p>
         </div>
-        <ChevronRight size={16} className="text-warm-muted" />
+        <ChevronRight size={16} className="text-gg-grey" />
       </button>
 
       {/* Symptom summary */}
-      <div className="bg-warm-card border border-warm-border rounded-2xl p-4">
+      <div className="bg-white border border-gg-blush rounded-2xl p-4">
         <div className="flex items-center gap-2 mb-3">
-          <AlertCircle size={14} className="text-amber-400" />
-          <p className="text-sm font-medium text-warm-text">Yesterday's snapshot</p>
+          <AlertCircle size={14} className="text-gg-teal" />
+          <p className="text-sm font-medium text-gray-800">Yesterday's snapshot</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {['😊 Happy', '⚡ Energetic', '✅ No symptoms'].map(tag => (
@@ -144,32 +144,32 @@ export default function HomeScreen({ onNavigate }: Props) {
       </div>
 
       {/* Energy indicator */}
-      <div className="bg-warm-card border border-warm-border rounded-2xl p-4">
+      <div className="bg-white border border-gg-blush rounded-2xl p-4">
         <div className="flex items-center gap-2 mb-3">
-          <Zap size={14} className="text-amber-400" />
-          <p className="text-sm font-medium text-warm-text">Energy forecast</p>
+          <Zap size={14} className="text-gg-teal" />
+          <p className="text-sm font-medium text-gray-800">Energy forecast</p>
         </div>
         <div className="flex items-center gap-3">
-          <div className="flex-1 h-2 bg-warm-bg rounded-full overflow-hidden">
-            <div className="h-full w-[78%] gradient-warm rounded-full" />
+          <div className="flex-1 h-2 bg-gg-pale-blush rounded-full overflow-hidden">
+            <div className="h-full w-[78%] gradient-gg-pink rounded-full" />
           </div>
-          <span className="text-amber-400 font-semibold text-sm">High</span>
+          <span className="text-gg-teal font-semibold text-sm">High</span>
         </div>
-        <p className="text-warm-muted text-xs mt-2">Days 6–13 are typically your peak energy window.</p>
+        <p className="text-gg-grey text-xs mt-2">Days 6–13 are typically your peak energy window.</p>
       </div>
 
       {/* Insight card */}
-      <div className="bg-warm-card border border-warm-border rounded-2xl p-4">
+      <div className="bg-white border border-gg-blush rounded-2xl p-4">
         <div className="flex items-start gap-3">
           <span className="text-2xl">{topInsight.icon}</span>
           <div className="flex-1">
-            <p className="text-warm-text font-medium text-sm">{topInsight.title}</p>
-            <p className="text-warm-muted text-xs mt-1 leading-relaxed">{topInsight.body}</p>
+            <p className="text-gray-800 font-medium text-sm">{topInsight.title}</p>
+            <p className="text-gg-grey text-xs mt-1 leading-relaxed">{topInsight.body}</p>
           </div>
         </div>
         <button
           onClick={() => onNavigate('insights')}
-          className="mt-3 text-rust-400 text-xs font-medium flex items-center gap-1"
+          className="mt-3 text-gg-pink text-xs font-medium flex items-center gap-1"
         >
           See all insights <ChevronRight size={12} />
         </button>
@@ -178,16 +178,16 @@ export default function HomeScreen({ onNavigate }: Props) {
       {/* Shared support nudge */}
       <button
         onClick={() => onNavigate('partner')}
-        className="w-full bg-warm-card border border-warm-border rounded-2xl p-4 flex items-center gap-3 active:scale-[0.98] transition-transform"
+        className="w-full bg-white border border-gg-blush rounded-2xl p-4 flex items-center gap-3 active:scale-[0.98] transition-transform"
       >
-        <div className="w-10 h-10 bg-sage-900/60 border border-sage-700/40 rounded-xl flex items-center justify-center">
-          <Users size={18} className="text-sage-400" />
+        <div className="w-10 h-10 bg-gg-teal/10 border border-gg-teal/30 rounded-xl flex items-center justify-center">
+          <Users size={18} className="text-gg-teal" />
         </div>
         <div className="flex-1 text-left">
-          <p className="text-warm-text font-medium text-sm">Shared support</p>
-          <p className="text-warm-muted text-xs mt-0.5">Liam can see your current phase</p>
+          <p className="text-gray-800 font-medium text-sm">Shared support</p>
+          <p className="text-gg-grey text-xs mt-0.5">Liam can see your current phase</p>
         </div>
-        <div className="w-2 h-2 rounded-full bg-sage-400" />
+        <div className="w-2 h-2 rounded-full bg-gg-teal" />
       </button>
     </div>
   )

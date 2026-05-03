@@ -19,7 +19,7 @@ export default function App() {
   const tabScreens: Screen[] = ['home', 'checkin', 'calendar', 'insights', 'profile']
 
   return (
-    <div className="min-h-screen bg-warm-bg flex flex-col">
+    <div className="min-h-screen bg-gg-pale-blush flex flex-col">
       <div className="flex-1 overflow-y-auto pb-20">
         {screen === 'home' && <HomeScreen onNavigate={setScreen} />}
         {screen === 'checkin' && <CheckinScreen onNavigate={setScreen} />}

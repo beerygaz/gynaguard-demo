@@ -16,7 +16,7 @@ const tabs = [
 
 export default function BottomNav({ current, onNavigate }: Props) {
   return (
-    <nav className="fixed bottom-0 inset-x-0 glass border-t border-warm-border safe-bottom z-50">
+    <nav className="fixed bottom-0 inset-x-0 glass border-t border-gg-blush safe-bottom z-50">
       <div className="max-w-lg mx-auto flex items-stretch">
         {tabs.map(({ id, label, Icon }) => {
           const active = current === id
@@ -31,7 +31,7 @@ export default function BottomNav({ current, onNavigate }: Props) {
               <Icon size={20} strokeWidth={active ? 2 : 1.5} />
               <span className="text-[10px] font-medium tracking-wide">{label}</span>
               {active && (
-                <span className="absolute bottom-0 w-6 h-0.5 rounded-full bg-rust-500 translate-y-0" />
+                <span className="absolute bottom-0 w-6 h-0.5 rounded-full bg-gg-pink translate-y-0" />
               )}
             </button>
           )

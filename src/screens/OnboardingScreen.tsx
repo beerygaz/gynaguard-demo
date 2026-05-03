@@ -7,28 +7,28 @@ interface Props {
 
 const slides = [
   {
-    icon: <Leaf className="text-rust-400" size={48} />,
+    icon: <Leaf className="text-gg-pink" size={48} />,
     title: 'Your cycle,\nyour story.',
     subtitle: 'Track, understand, and own your body\'s natural rhythms — with clarity and care.',
-    accent: 'from-rust-900/60 to-warm-bg',
+    accent: 'from-gg-pink/10 to-gg-pale-blush',
   },
   {
-    icon: <Heart className="text-amber-400" size={48} />,
+    icon: <Heart className="text-gg-teal" size={48} />,
     title: 'Daily check-ins\nthat matter.',
     subtitle: 'Log symptoms, flow, mood, and notes in seconds. Gynaguard learns your patterns over time.',
-    accent: 'from-sienna-900/60 to-warm-bg',
+    accent: 'from-gg-pink-mid/20 to-gg-pale-blush',
   },
   {
-    icon: <Eye className="text-rust-400" size={48} />,
+    icon: <Eye className="text-gg-pink" size={48} />,
     title: 'Insights,\nnot guesses.',
     subtitle: 'Spot trends in your cycle, energy, and mood. Understand your body before it speaks up.',
-    accent: 'from-rust-900/60 to-warm-bg',
+    accent: 'from-gg-pink/10 to-gg-pale-blush',
   },
   {
-    icon: <Shield className="text-sage-400" size={48} />,
+    icon: <Shield className="text-gg-teal" size={48} />,
     title: 'Private by\ndesign.',
     subtitle: 'Your data stays on your terms. Share only what you choose, only with who you trust.',
-    accent: 'from-sage-900/60 to-warm-bg',
+    accent: 'from-gg-teal/10 to-gg-pale-blush',
     isLast: true,
   },
 ]
@@ -43,13 +43,13 @@ export default function OnboardingScreen({ onComplete }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-warm-bg flex flex-col items-center justify-between px-6 pt-16 pb-12 max-w-sm mx-auto">
+    <div className="min-h-screen bg-gg-pale-blush flex flex-col items-center justify-between px-6 pt-16 pb-12 max-w-sm mx-auto">
       {/* Logo */}
       <div className="flex flex-col items-center gap-2">
-        <div className="w-12 h-12 gradient-rust rounded-2xl flex items-center justify-center shadow-lg">
+        <div className="w-12 h-12 gradient-gg-pink rounded-2xl flex items-center justify-center shadow-lg">
           <span className="text-display text-white text-xl font-bold">G</span>
         </div>
-        <span className="text-warm-muted text-xs tracking-widest uppercase font-medium">Gynaguard</span>
+        <span className="text-gg-grey text-xs tracking-widest uppercase font-medium">Gynaguard</span>
       </div>
 
       {/* Slide content */}
@@ -58,14 +58,14 @@ export default function OnboardingScreen({ onComplete }: Props) {
         className="flex flex-col items-center text-center gap-6 animate-[fadeUp_0.4s_ease_both]"
         style={{ animation: 'fadeUp 0.4s ease both' }}
       >
-        <div className="w-24 h-24 rounded-full bg-warm-card border border-warm-border flex items-center justify-center card-glow">
+        <div className="w-24 h-24 rounded-full bg-white border border-gg-blush flex items-center justify-center card-glow">
           {slide.icon}
         </div>
         <div className="space-y-3">
-          <h1 className="text-display text-3xl font-semibold text-warm-text leading-tight whitespace-pre-line">
+          <h1 className="text-display text-3xl font-semibold text-gray-800 leading-tight whitespace-pre-line">
             {slide.title}
           </h1>
-          <p className="text-warm-muted text-base leading-relaxed">
+          <p className="text-gg-grey text-base leading-relaxed">
             {slide.subtitle}
           </p>
         </div>
@@ -80,8 +80,8 @@ export default function OnboardingScreen({ onComplete }: Props) {
               key={i}
               className={`rounded-full transition-all ${
                 i === step
-                  ? 'w-6 h-2 bg-rust-500'
-                  : 'w-2 h-2 bg-warm-border'
+                  ? 'w-6 h-2 bg-gg-pink'
+                  : 'w-2 h-2 bg-gg-blush'
               }`}
             />
           ))}
@@ -98,7 +98,7 @@ export default function OnboardingScreen({ onComplete }: Props) {
         {step === 0 && (
           <button
             onClick={onComplete}
-            className="w-full text-center text-warm-muted text-sm py-2"
+            className="w-full text-center text-gg-grey text-sm py-2"
           >
             I already have an account
           </button>

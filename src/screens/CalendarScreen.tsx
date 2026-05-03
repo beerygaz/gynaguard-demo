@@ -31,26 +31,26 @@ export default function CalendarScreen({ onNavigate: _onNavigate }: Props) {
     <div className="max-w-lg mx-auto px-4 pt-10 pb-4 space-y-5">
       {/* Header */}
       <div>
-        <p className="text-warm-muted text-xs uppercase tracking-wider font-medium">Cycle calendar</p>
-        <h1 className="text-display text-2xl font-semibold text-warm-text mt-1">Your history</h1>
+        <p className="text-gg-grey text-xs uppercase tracking-wider font-medium">Cycle calendar</p>
+        <h1 className="text-display text-2xl font-semibold text-gray-800 mt-1">Your history</h1>
       </div>
 
       {/* Month nav */}
-      <div className="bg-warm-card border border-warm-border rounded-2xl p-4">
+      <div className="bg-white border border-gg-blush rounded-2xl p-4">
         <div className="flex items-center justify-between mb-4">
-          <button onClick={prevMonth} className="w-8 h-8 rounded-full bg-warm-bg flex items-center justify-center">
-            <ChevronLeft size={16} className="text-warm-muted" />
+          <button onClick={prevMonth} className="w-8 h-8 rounded-full bg-gg-pale-blush flex items-center justify-center">
+            <ChevronLeft size={16} className="text-gg-grey" />
           </button>
-          <span className="text-warm-text font-semibold">{monthLabel}</span>
-          <button onClick={nextMonth} className="w-8 h-8 rounded-full bg-warm-bg flex items-center justify-center">
-            <ChevronRight size={16} className="text-warm-muted" />
+          <span className="text-gray-800 font-semibold">{monthLabel}</span>
+          <button onClick={nextMonth} className="w-8 h-8 rounded-full bg-gg-pale-blush flex items-center justify-center">
+            <ChevronRight size={16} className="text-gg-grey" />
           </button>
         </div>
 
         {/* DOW row */}
         <div className="grid grid-cols-7 mb-2">
           {DAYS_OF_WEEK.map(d => (
-            <div key={d} className="text-center text-warm-muted text-xs font-medium py-1">
+            <div key={d} className="text-center text-gg-grey text-xs font-medium py-1">
               {d}
             </div>
           ))}
@@ -78,14 +78,14 @@ export default function CalendarScreen({ onNavigate: _onNavigate }: Props) {
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all ${
                     isToday
-                      ? 'gradient-rust text-white shadow-md'
+                      ? 'gradient-gg-pink text-white shadow-md'
                       : isPeriod
-                      ? 'bg-rust-900/60 text-rust-300'
+                      ? 'bg-gg-pink/15 text-gg-pink'
                       : isFertile
-                      ? 'bg-sage-900/60 text-sage-300'
+                      ? 'bg-gg-teal/15 text-gg-teal'
                       : isOvulation
-                      ? 'bg-amber-900/60 text-amber-300'
-                      : 'text-warm-muted hover:text-warm-text'
+                      ? 'bg-gg-teal/25 text-gg-teal'
+                      : 'text-gg-grey hover:text-gray-800'
                   }`}
                 >
                   {date.getDate()}
@@ -97,36 +97,36 @@ export default function CalendarScreen({ onNavigate: _onNavigate }: Props) {
       </div>
 
       {/* Legend */}
-      <div className="bg-warm-card border border-warm-border rounded-2xl p-4">
-        <p className="text-xs text-warm-muted uppercase tracking-wider font-medium mb-3">Legend</p>
+      <div className="bg-white border border-gg-blush rounded-2xl p-4">
+        <p className="text-xs text-gg-grey uppercase tracking-wider font-medium mb-3">Legend</p>
         <div className="space-y-2">
           {[
-            { dot: 'bg-rust-500', label: 'Period' },
-            { dot: 'bg-sage-400', label: 'Fertile window' },
-            { dot: 'bg-amber-400', label: 'Estimated ovulation' },
-            { dot: 'gradient-rust', label: 'Today' },
+            { dot: 'bg-gg-pink', label: 'Period' },
+            { dot: 'bg-gg-teal', label: 'Fertile window' },
+            { dot: 'bg-gg-teal', label: 'Estimated ovulation' },
+            { dot: 'gradient-gg-pink', label: 'Today' },
           ].map(item => (
             <div key={item.label} className="flex items-center gap-3">
               <div className={`w-3 h-3 rounded-full ${item.dot}`} />
-              <span className="text-warm-muted text-sm">{item.label}</span>
+              <span className="text-gg-grey text-sm">{item.label}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Cycle stats */}
-      <div className="bg-warm-card border border-warm-border rounded-2xl p-4">
-        <p className="text-xs text-warm-muted uppercase tracking-wider font-medium mb-4">Cycle stats</p>
+      <div className="bg-white border border-gg-blush rounded-2xl p-4">
+        <p className="text-xs text-gg-grey uppercase tracking-wider font-medium mb-4">Cycle stats</p>
         <div className="grid grid-cols-3 gap-3">
           {[
             { label: 'Avg length', value: '28', unit: 'days' },
             { label: 'Avg period', value: '5', unit: 'days' },
             { label: 'Cycles tracked', value: '5', unit: 'total' },
           ].map(s => (
-            <div key={s.label} className="bg-warm-bg rounded-xl p-3 text-center">
-              <p className="text-xl font-bold text-warm-text">{s.value}</p>
-              <p className="text-warm-muted text-[10px] mt-0.5">{s.unit}</p>
-              <p className="text-warm-muted text-[10px]">{s.label}</p>
+            <div key={s.label} className="bg-gg-pale-blush rounded-xl p-3 text-center">
+              <p className="text-xl font-bold text-gray-800">{s.value}</p>
+              <p className="text-gg-grey text-[10px] mt-0.5">{s.unit}</p>
+              <p className="text-gg-grey text-[10px]">{s.label}</p>
             </div>
           ))}
         </div>
