@@ -1,0 +1,74 @@
+title Gynaguard - Women's Health & Cycle Tracking Architecture
+
+direction right
+
+Clients [icon: users] {
+  React Native App [icon: smartphone]
+  Web Admin Dashboard [icon: monitor]
+}
+
+Azure South Africa North [icon: azure-region, color: blue] {
+  Azure Front Door [icon: azure-front-door]
+
+  Backend Services [icon: azure-app-service] {
+    Node.js API [icon: nodejs]
+    Auth Service [icon: lock]
+    Cycle Prediction Engine [icon: cpu]
+    Notification Service [icon: bell]
+    Analytics Engine [icon: bar-chart-2]
+    Clinical Export Service [icon: file-text]
+  }
+
+  Data Layer [icon: database] {
+    PostgreSQL [icon: azure-database-postgresql]
+    Redis Cache [icon: azure-cache-redis]
+    Blob Storage [icon: azure-blob-storage]
+  }
+}
+
+External Services [icon: cloud] {
+  Auth0 [icon: auth0]
+  Firebase FCM [icon: firebase]
+  APNs [icon: apple]
+}
+
+Health Integrations [icon: heart] {
+  Apple Health [icon: apple]
+  Google Fit [icon: google]
+}
+
+DevOps [icon: settings] {
+  GitHub Actions [icon: github]
+  Application Insights [icon: azure-application-insights]
+}
+
+// Client connections
+React Native App > Azure Front Door: HTTPS REST
+Web Admin Dashboard > Azure Front Door: HTTPS
+Azure Front Door > Node.js API
+
+// Health sync
+React Native App <> Health Integrations: sync
+
+// Backend internal
+Node.js API > Auth Service
+Node.js API > Cycle Prediction Engine
+Node.js API > Notification Service
+Node.js API > Analytics Engine
+Node.js API > Clinical Export Service
+
+// Auth
+Auth Service > Auth0: authenticate
+
+// Data connections
+Node.js API <> PostgreSQL
+Node.js API <> Redis Cache: sessions, rate limiting
+Node.js API <> Blob Storage: media, exports
+
+// Push notifications
+Notification Service > Firebase FCM: Android push
+Notification Service > APNs: iOS push
+
+// DevOps
+GitHub Actions > Node.js API: deploy
+Application Insights <-- Node.js API: monitoring
